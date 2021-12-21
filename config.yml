@@ -1,0 +1,21 @@
+---
+
+- hosts: ubuntu
+  vars_files:
+    - ./config.yaml
+  
+  roles:
+    - ubuntu/elk
+    - ubuntu/nagios
+    - ubuntu/nagiossetup
+    - ubuntu/nagiosplugins
+    - ubuntu/grafana
+    - ubuntu/lamp
+
+
+- hosts: centos
+
+  roles:
+    - centos/elk
+    - centos/grafana
+    - centos/lamp
